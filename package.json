@@ -24,7 +24,7 @@
     "css"
   ],
   "license": "MIT",
-  "author": "Thomas Ghysels <info@thomasg.be>",
+  "author": "Samuele C. De Tomasi",
   "homepage": "https://github.com/el3um4s/rollup-plugin-css-only",
   "bugs": {
     "url": "https://github.com/el3um4s/rollup-plugin-css-only/issues"
