@@ -1,0 +1,52 @@
+{
+  "name": "@el3um4s/rollup-plugin-css-only",
+  "version": "0.1.0",
+  "description": "Rollup plugin that bundles imported css",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.es.js",
+  "jsnext:main": "dist/index.es.js",
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -cw",
+    "test:unix:simple": "cd test/simple && rm -f output.* && rollup -c && cmp output.js ../expected.js && cmp output.css expected.css && cd ../..",
+    "test:win:simple": "cd .\\test\\simple && del -f output.* && rollup -c && cd .. && ECHO n|comp simple\\output.js expected.js && ECHO n|comp simple\\output.css simple\\expected.css && cd ..",
+    "test:win": "npm run test:win:simple",
+    "test:unix": "npm run test:unix:simple",
+    "lint": "prettier rollup.config.js src/**",
+    "prepare": "npm run build",
+    "prepublish": "npm run build",
+    "check-updates": "npx npm-check-updates",
+    "check-updates:minor": "npx npm-check-updates --target minor",
+    "check-updates:patch": "npx npm-check-updates --target patch"
+  },
+  "keywords": [
+    "rollup-plugin",
+    "css"
+  ],
+  "license": "MIT",
+  "author": "Thomas Ghysels <info@thomasg.be>",
+  "homepage": "https://github.com/el3um4s/rollup-plugin-css-only",
+  "bugs": {
+    "url": "https://github.com/el3um4s/rollup-plugin-css-only/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/el3um4s/rollup-plugin-css-only"
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=10.12.0"
+  },
+  "peerDependencies": {
+    "rollup": "^1"
+  },
+  "dependencies": {
+    "@rollup/pluginutils": "4"
+  },
+  "devDependencies": {
+    "@rollup/plugin-buble": "^0.21.3",
+    "rollup": "^2"
+  }
+}
